@@ -32,6 +32,15 @@ class AddressBook {
     }
 
     addContact(contact) {
+        let isDuplicate = this.contacts.some(
+            existingContact => existingContact.firstName === contact.firstName && existingContact.lastName === contact.lastName
+        );
+
+        if (isDuplicate) {
+            console.log("Duplicate contact found. Contact not added.");
+            return;
+        }
+
         this.contacts.push(contact);
         console.log("Contact added:", contact);
     }
