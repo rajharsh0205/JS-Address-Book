@@ -35,6 +35,20 @@ class AddressBook {
         this.contacts.push(contact);
         console.log("Contact added:", contact);
     }
+
+     findContact(firstName, lastName) {
+        return this.contacts.find(contact => contact.firstName === firstName && contact.lastName === lastName);
+    }
+
+    editContact(firstName, lastName, newDetails) {
+        let contact = this.findContact(firstName, lastName);
+        if (contact) {
+            Object.assign(contact, newDetails);
+            console.log("Contact updated:", contact);
+        } else {
+            console.log("Contact not found.");
+        }
+    }
 }
 
 // Test Cases
