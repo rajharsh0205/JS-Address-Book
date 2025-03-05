@@ -59,6 +59,10 @@ class AddressBook {
             console.log("Contact not found.");
         }
     }
+
+    countContacts() {
+        return this.contacts.length;
+    }
 }
 
 // Test Cases
